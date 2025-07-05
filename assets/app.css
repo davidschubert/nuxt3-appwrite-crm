@@ -1,6 +1,6 @@
 @import "tailwindcss";
 summary::-webkit-details-marker {
-  display: none
+  display: none;
 }
 
 .checker-background::before {
