@@ -1,8 +1,9 @@
 import { db } from "~/server/utils/appwrite";
 
 export default defineEventHandler(async (event) => {
+    let contacts;
     try {
-        const { contacts } = await readBody(event);
+        ({ contacts } = await readBody(event));
         const response = await db.upsertDocuments(contacts);
         return response;
     } catch (error) {
@@ -10,13 +11,16 @@ export default defineEventHandler(async (event) => {
 
         // Simulation für Entwicklung
         console.log("Simuliere Speichern für Entwicklung...");
+        const documents = Array.isArray(contacts)
+            ? contacts.map((contact) => ({
+                  ...contact,
+                  $id: contact.$id || `demo-${Date.now()}`,
+              }))
+            : [];
         return {
             success: true,
             message: "Kontakte erfolgreich gespeichert (Demo-Modus)",
-            documents: contacts.map((contact) => ({
-                ...contact,
-                $id: contact.$id || `demo-${Date.now()}`,
-            })),
+            documents,
         };
     }
 });
