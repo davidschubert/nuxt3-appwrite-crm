@@ -2,15 +2,15 @@ import tailwindcss from "@tailwindcss/vite";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     runtimeConfig: {
-        appwriteEndpoint: process.env.NUXT_PUBLIC_APPWRITE_ENDPOINT,
-        appwriteProjectId: process.env.NUXT_PUBLIC_APPWRITE_PROJECT_ID,
-        appwriteApiKey: process.env.NUXT_PUBLIC_APPWRITE_API_KEY,
-        appwriteDatabaseId: process.env.NUXT_PUBLIC_APPWRITE_DATABASE_ID,
-        appwriteCollectionId: process.env.NUXT_PUBLIC_APPWRITE_COLLECTION_ID,
+        appwriteEndpoint: process.env.NUXT_APPWRITE_ENDPOINT,
+        appwriteProjectId: process.env.NUXT_APPWRITE_PROJECT_ID,
+        appwriteApiKey: process.env.NUXT_APPWRITE_API_KEY,
+        appwriteDatabaseId: process.env.NUXT_APPWRITE_DATABASE_ID,
+        appwriteCollectionId: process.env.NUXT_APPWRITE_COLLECTION_ID,
         public: {
-            appwriteEndpoint: process.env.NUXT_PUBLIC_APPWRITE_ENDPOINT,
-            appwriteProjectId: process.env.NUXT_PUBLIC_APPWRITE_PROJECT_ID,
-            appwriteProjectName: process.env.NUXT_PUBLIC_APPWRITE_PROJECT_NAME,
+            appwriteEndpoint: process.env.NUXT_APPWRITE_ENDPOINT,
+            appwriteProjectId: process.env.NUXT_APPWRITE_PROJECT_ID,
+            appwriteProjectName: process.env.NUXT_APPWRITE_PROJECT_NAME,
         },
     },
     compatibilityDate: "2024-04-03",
